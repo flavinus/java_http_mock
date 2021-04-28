@@ -124,7 +124,7 @@ public class MyHttpServer {
 
     protected void sendResponse(HttpExchange httpExchange, int code, String output) throws IOException {
 
-        var response = output.getBytes();
+        byte[] response = output.getBytes();
         httpExchange.sendResponseHeaders(code, response.length);
 
         OutputStream outputStream = httpExchange.getResponseBody();        
